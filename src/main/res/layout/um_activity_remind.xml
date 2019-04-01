@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <!--Title Bar-->
+    <FrameLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titlebar_height"
+        android:background="@color/color_bar_gray">
+
+        <ImageView
+            android:id="@+id/title_bar_return"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|center_vertical"
+            android:contentDescription="@null"
+            android:paddingLeft="@dimen/std_titlebar_margin_left_right"
+            android:paddingRight="@dimen/std_titlebar_margin_left_right"
+            android:scaleType="center"
+            android:src="@drawable/std_tittlebar_main_device_back" />
+
+        <TextView
+            style="@style/std_word_001"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/titlebar_return_area_size"
+            android:layout_marginRight="@dimen/titlebar_return_area_size"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/um_drink_remind_title" />
+    </FrameLayout>
+
+    <!--是否提醒-->
+    <LinearLayout
+        android:id="@+id/remind_open_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        android:layout_margin="24dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/um_whether_to_open"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/font_size_15sp" />
+
+        <com.yunmi.heatkettle.view.UMSwitchButton
+            android:id="@+id/remind_switch"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            app:tintColor="@color/color_um_green" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/remind_line_1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/remind_open_layout"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/color_line_gray" />
+
+    <TextView
+        android:id="@+id/remind_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/remind_line_1"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/um_remind_time"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/font_size_15sp" />
+
+    <View
+        android:id="@+id/remind_line_2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/remind_time_text"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/color_line_gray" />
+
+    <FrameLayout
+        android:id="@+id/remind_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:visibility="gone" />
+
+    <!--选择-->
+    <include layout="@layout/um_remind_chose_layout" />
+</RelativeLayout>

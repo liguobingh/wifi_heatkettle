@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.yunmi.heatkettle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.yunmi.heatkettle.view.UMGifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:gif="@drawable/flash_wash_smoke" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@null"
+        android:src="@drawable/icon_wash_machine" />
+
+    <ProgressBar
+        android:id="@+id/wash_flash_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:progressDrawable="@drawable/um_progress_style"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/um_wash_flash_tip"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_size_17sp" />
+</LinearLayout>

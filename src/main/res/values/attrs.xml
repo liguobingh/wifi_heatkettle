@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--水温设置 SeekBar-->
+    <declare-styleable name="UMSeekBar">
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="textBackground" format="reference" />
+    </declare-styleable>
+
+    <!-- SwitchButton -->
+    <declare-styleable name="UMSwitchButton">
+        <attr name="tintColor" format="reference|color" />
+        <attr name="outerStrokeWidth" format="reference|dimension" />
+        <attr name="shadowSpace" format="reference|dimension" />
+    </declare-styleable>
+
+    <!--GifImageView-->
+    <declare-styleable name="GifImageView">
+        <attr name="gif" format="reference" />
+        <attr name="paused" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTheme">
+        <attr name="GifViewStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MyCustomCircleArrowView">
+        <attr name="circlr_bound_width" format="dimension"></attr>
+        <attr name="circlr_bound_color" format="color"></attr>
+    </declare-styleable>
+
+</resources>

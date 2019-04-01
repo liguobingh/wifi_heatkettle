@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.yunmi.heatkettle">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application>
+        <!-- 支持插件的最低版本，必须 -->
+        <meta-data android:name="minPluginSdkApiVersion" android:value="16" />
+        <!-- 设备model，必须 -->
+        <meta-data android:name="model" android:value="yunmi.kettle.r1|yunmi.waterpuri.h11|yunmi.kettle.r2|yunmi.kettle.r3" />
+        <!-- 设备处理消息入口，必须 -->
+        <meta-data android:name="message_handler" android:value="com.yunmi.heatkettle.MessageReceiver" />
+        <!-- 开发者Id, 必须 -->
+        <meta-data android:name="MiHomeDeveloperId" android:value="id_308264272" />
+        <!-- 支持的运行平台,必须 -->
+        <meta-data android:name="MiHomePlatform" android:value="phone" />
+        <!-- 是否支持widget显示,非必须 -->
+        <meta-data android:name="MiHomeSupportWidget" android:value="false" />
+    </application>
+</manifest>

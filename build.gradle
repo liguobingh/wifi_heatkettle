@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+
+android {
+    //BaseExtension.class中的compileSdkVersion()
+    compileSdkVersion 23
+    //BaseExtension.class中的buildToolsVersion()
+    buildToolsVersion '28.0.1'
+
+    //BaseExtension.class中的defaultConfig()
+    defaultConfig {
+        //需要配置为插件包名
+        //DefaultProductFlavor.class中的setApplicationId()
+        applicationId "com.yunmi.heatkettle"
+        //ProductFlavor.class中的minSdkVersion()
+        minSdkVersion 14
+        //ProductFlavor.class中的targetSdkVersion()
+        targetSdkVersion 19
+        //每次发布版本versionCode必须加1
+        //DefaultProductFlavor.class中的setVersionCode()
+        versionCode 25
+        //DefaultProductFlavor.class中的setVersionName()
+        versionName "1.2.5"
+    }
+
+    //BaseExtension.class中的signingConfigs()
+    signingConfigs {
+        //SigningConfig.class中的SigningConfig()
+        release {
+            //需要重新配置插件的签名文件
+            //DefaultSigningConfig.class中的setStoreFile()
+            storeFile new File("${project.projectDir}/keystore/key.keystore")
+            //DefaultSigningConfig.class中的setStorePassword()
+            storePassword '123456'
+            //DefaultSigningConfig.class中的setKeyAlias()
+            keyAlias 'water'
+            //DefaultSigningConfig.class中的setKeyPassword()
+            keyPassword '123456'
+        }
+    }
+
+    //BaseExtension.class中的buildTypes()
+    buildTypes {
+        //BuildType.class中的BuildType()
+        debug {
+            //DefaultBuildType.class中的setDebuggable()
+            debuggable true
+            //DefaultBuildType.class中的setSigningConfig()
+            signingConfig signingConfigs.release
+        }
+        //BuildType.class中的BuildType()
+        release {
+            //DefaultBuildType.class中的setMinifyEnabled()
+            minifyEnabled true
+            //BuildType.class中的setShrinkResources()
+            shrinkResources false
+            //DefaultBuildType.class中的setZipAlignEnabled()
+            zipAlignEnabled true
+            //BuildType.class中的proguardFiles()
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //DefaultBuildType.class中的setSigningConfig()
+            signingConfig signingConfigs.release
+        }
+    }
+
+    //如果依赖apache http类，使用下面指令
+    //useLibrary 'org.apache.http.legacy'
+}
+
+//Project.java中的dependencies()
+dependencies {
+    //
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //
+    compile 'com.android.support:support-annotations:24.0.0-alpha2'
+    //
+    compile project(':common_ui')
+}
+
+
+//如果有其他项目依赖，添加下面属性，项目名字相对于插件根目录
+//project.ext.set("complieProject",[":gifview"])
+
+
+//插件依赖下面脚本编译
+apply from: "${project.rootDir.absolutePath}/plug.gradle"

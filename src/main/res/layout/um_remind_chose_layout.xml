@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/remind_chose_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignTop="@+id/remind_time_text"
+    android:layout_marginEnd="24dp"
+    android:layout_marginRight="24dp"
+    android:background="@drawable/um_remind_bg_green"
+    android:orientation="vertical"
+    android:padding="2dp"
+    android:visibility="visible">
+
+    <RelativeLayout
+        android:id="@+id/remind_chose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingBottom="4dp"
+        android:paddingEnd="8dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="8dp"
+        android:paddingStart="12dp"
+        android:paddingTop="4dp">
+
+        <TextView
+            android:id="@+id/remind_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/um_drink_remind_tip_chose"
+            android:textColor="#4eccdc"
+            android:textSize="@dimen/font_size_13sp" />
+
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/remind_time"
+            android:layout_toRightOf="@+id/remind_time"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_arrow" />
+    </RelativeLayout>
+
+    <com.yunmi.heatkettle.view.UMExpandLayout
+        android:id="@+id/remind_expand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View style="@style/line_remind_chose" />
+
+            <TextView
+                android:id="@+id/remind_item1"
+                style="@style/text_remind_chose"
+                android:text="@string/um_remind_more_than_1_hours" />
+
+            <View style="@style/line_remind_chose" />
+
+            <TextView
+                android:id="@+id/remind_item2"
+                style="@style/text_remind_chose"
+                android:text="@string/um_remind_more_than_2_hours" />
+
+            <View style="@style/line_remind_chose" />
+
+            <TextView
+                android:id="@+id/remind_item3"
+                style="@style/text_remind_chose"
+                android:text="@string/um_remind_more_than_3_hours" />
+
+            <View style="@style/line_remind_chose" />
+
+            <TextView
+                android:id="@+id/remind_item4"
+                style="@style/text_remind_chose"
+                android:text="@string/um_remind_more_than_4_hours" />
+
+            <View style="@style/line_remind_chose" />
+
+            <TextView
+                android:id="@+id/remind_item5"
+                style="@style/text_remind_chose"
+                android:text="@string/um_remind_more_than_6_hours" />
+
+            <View style="@style/line_remind_chose" />
+
+            <TextView
+                android:id="@+id/remind_item6"
+                style="@style/text_remind_chose"
+                android:text="@string/um_remind_more_than_8_hours" />
+
+            <View style="@style/line_remind_chose" />
+
+            <TextView
+                android:id="@+id/remind_item7"
+                style="@style/text_remind_chose"
+                android:text="@string/um_remind_more_than_10_hours" />
+
+            <View style="@style/line_remind_chose" />
+
+            <TextView
+                android:id="@+id/remind_item8"
+                style="@style/text_remind_chose"
+                android:text="@string/um_remind_more_than_12_hours" />
+        </LinearLayout>
+    </com.yunmi.heatkettle.view.UMExpandLayout>
+</LinearLayout>
